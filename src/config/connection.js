@@ -14,6 +14,18 @@
 //   }
 // };
 
+const dotenv = require('dotenv');
+const Sequelize = require('sequelize');
+
+dotenv.config();
+
+const {
+  DB_NAME,
+  DB_PASSWORD,
+  DB_USER,
+  DB_URI
+} = process.env;
+
 //connect to remote db
 const db = new Sequelize(config.DB_URI, {
   define : {
